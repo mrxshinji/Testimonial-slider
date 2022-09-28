@@ -1,0 +1,355 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Dark Blue: hsl(240, 38%, 20%)
+- Grayish Blue: hsl(240, 18%, 77%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 32px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 300, 500, 700 */
+
+:root {
+  --DarkBlue: hsl(240, 38%, 20%);
+  --GrayishBlue: hsl(240, 18%, 77%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images//pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ======== SLide Item ======== */
+
+.slide-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-zone {
+  position: relative;
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-item {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* .slide-item.active {
+  display: flex;
+} */
+
+.profile-img {
+  background-image: url("../images/pattern-bg.svg");
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 295px;
+  margin-bottom: 2rem;
+}
+
+.slide-item img {
+  width: 254px;
+  height: 254px;
+}
+
+p {
+  text-align: center;
+}
+
+.testimonial {
+  width: 90%;
+}
+
+#testimonial {
+  font-weight: 500;
+  color: var(--DarkBlue);
+  margin: 1rem 0;
+  line-height: 25px;
+}
+
+#name {
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+#job {
+  margin: 1rem 0;
+  font-weight: 400;
+  color: var(--GrayishBlue);
+
+}
+/* ======== Slide Item END ======== */
+
+.bot-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 153px;
+  background-image: url("../images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* ======== Next/Back button ======== */
+
+#slide-btn {
+  position: absolute;
+  background-color: white;
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 5;
+  
+}
+
+#slide-btn button {
+  border: none;
+  background-color: white;
+  line-height: 5px;
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+#slide-btn button:hover {
+  filter: brightness(0.5);
+}
+
+/* ======== Next/Back button END ======== */
+
+/* ======== Slide Animation ======== */
+
+/* slide left */
+.slide-left-enter {
+  transform: translateX(100vw);
+  position: absolute;
+}
+
+.slide-left-enter-active {
+  transform: translateX(0%);
+  transition: all 0.5s ease-in;
+  
+}
+
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+.slide-left-exit {
+  transform: translateX(-100vw);
+  transition: all 0.5s ease-in;
+}
+
+/* slide right */
+.slide-right-enter {
+  transform: translateX(-100vw);
+  position: absolute;
+}
+
+.slide-right-enter-active {
+  transform: translateX(0%);
+  transition: all 0.5s ease-in;
+}
+
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+.slide-right-exit {
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in;
+}
+
+
+/* ======== Slide Animation END ======== */
+
+
+/*  min width 500px ======== */
+
+@media screen and (min-width:450px) {
+  .container {
+    background-position: center;
+    background-image: none;
+  }
+
+  /* ======== SLide Item ======== */
+  
+
+  .slide-item {
+    top:15%;
+    left: 0;
+    width: 100%;
+    min-width: 900px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    z-index: 2;
+  }
+
+  
+  .profile-img {
+    grid-row: 1 / 2;
+    grid-column: 3 / 5;
+    width: 700px;
+    height: 660px;
+  }
+  
+  .slide-item img {
+    width: 540px;
+    height: 540px;
+  }
+  
+  p {
+    text-align: start;
+    font-size: 32px;
+  }
+  
+  .testimonial {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    z-index: 10;
+    width: 65%;
+    margin-left: 10rem;
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position: 3rem 0;
+  }
+
+  .inline {
+    display: inline-flex;
+    gap: 1rem;
+  }
+  
+  #testimonial {
+    font-weight: 300;
+    margin: 1rem 0;
+    line-height: 40px;
+  }
+  /* ======== Slide Item END ======== */
+  
+  .bot-bg {
+    background-size: contain;
+  }
+  
+  
+  /* ======== Next/Back button ======== */
+  
+  
+  #slide-btn {
+    position: absolute;
+    top: 720px;
+    margin-left: 20rem;
+    width: 120px;
+    height: 60px;
+    border-radius: 20px;
+    z-index: 5;
+    box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #slide-btn button {
+    border: none;
+    background-color: white;
+    line-height: 5px;
+    margin: 0 15px;
+  }
+  
+  /* ======== Next/Back button END ======== */
+
+  /* ======== Slide Animation ======== */
+
+/* slide left */
+.slide-left-enter {
+  transform: translateX(100vw);
+  position: absolute;
+}
+
+.slide-left-enter-active {
+  transform: translateX(0%);
+  transition: all 0.8s ease-in;
+  
+}
+
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+.slide-left-exit {
+  transform: translateX(-100vw);
+  transition: all 0.8s ease-in;
+}
+
+/* slide right */
+.slide-right-enter {
+  transform: translateX(-100vw);
+  position: absolute;
+}
+
+.slide-right-enter-active {
+  transform: translateX(0%);
+  transition: all 0.8s ease-in;
+}
+
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+.slide-right-exit {
+  transform: translateX(100vw);
+  transition: all 0.8s ease-in;
+}
+
+
+/* ======== Slide Animation END ======== */
+}
